@@ -54,11 +54,3 @@ function vps {
 function alpha {
   zssh $1.alpha
 }
-
-function ipmisol {
-  ipmitool -I lanplus -H $1 -U uladmin sol activate
-}
-
-function ipmistatus {
-  ipmitool -I lanplus -H $1 -U uladmin chassis power status
-}
