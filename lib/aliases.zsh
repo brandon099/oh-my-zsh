@@ -31,34 +31,13 @@ alias l='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
 alias sl=ls # often screw this up
-alias zz='ssh -A -p 5190 zugzug.bluehost.com'
 alias vm='ssh -p 3022 devstack@localhost'
 alias afind='ack-grep -il'
 
 function zssh {
-  /usr/bin/ssh -t -A zugzug2.bluehost.com -p5190 "ssh -A $1 "
-}
-
-function k {
-  /usr/bin/ssh -t -A zugzug2.bluehost.com -p5190 "ssh -t bclifford@keyserv.unifiedlayer.com $1"
-}
-
-function kb {
-  /usr/bin/ssh -t -A zugzug2.bluehost.com -p5190 "ssh -t bclifford@keyserv.beta.unifiedlayer.com $1"
-}
-
-function vps {
-  /usr/bin/ssh -t -A zugzug2.bluehost.com -p5190 "ssh -A bclifford@198.57.212.32"
+  /usr/bin/ssh brandon.clifford@$1.vivint.com
 }
 
 function alpha {
   zssh $1.alpha
-}
-
-function ipmisol {
-  ipmitool -I lanplus -H $1 -U uladmin sol activate
-}
-
-function ipmistatus {
-  ipmitool -I lanplus -H $1 -U uladmin chassis power status
 }
