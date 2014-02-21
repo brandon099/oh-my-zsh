@@ -35,7 +35,11 @@ alias vm='ssh -p 3022 devstack@localhost'
 alias afind='ack-grep -il'
 
 function zssh {
-  /usr/bin/ssh brandon.clifford@$1.vivint.com
+    if [[ $1 == webstage ]]; then
+        /usr/bin/ssh brandon.clifford@$1.apex.local
+    else
+        /usr/bin/ssh brandon.clifford@$1.vivint.com
+    fi
 }
 
 function alpha {
