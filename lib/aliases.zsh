@@ -35,7 +35,7 @@ alias vm='ssh -p 3022 devstack@localhost'
 alias afind='ack-grep -il'
 
 function zssh {
-    localsrv=(webstage webdev dmzweb11 dmzweb12)
+    localsrv=(webstage webdev dmzweb11 dmzweb12 dmzweb13)
     if [[ ${localsrv[(r)$1]} == $1 ]] ; then
         /usr/bin/ssh brandon.clifford@$1.apex.local
     else
