@@ -40,7 +40,9 @@ function web_search() {
     url="${(j://:)${(s:/:)urls[$1]}[1,2]}"
   fi
 
-  nohup $open_cmd "$url" &>/dev/null
+  url="${url%?}" # remove the last '+'
+  nohup $open_cmd "$url" 
+ 	rm nohup.out	
 }
 
 
