@@ -6,17 +6,17 @@ if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 # primary prompt
-PROMPT='$FG[242]------------------------------------------------------------%{$reset_color%}
-$FG[032]%~\
+PROMPT='$FG[004]------------------------------------------------------------%{$reset_color%}
+$FG[007]%~ \
 $(git_prompt_info) \
-$FG[105]%(!.#.»)%{$reset_color%} '
+$FG[004]%(!.#.»)%{$reset_color%} '
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='${return_code}'
 
 
 # color vars
-eval my_gray='$FG[242]'
-eval my_orange='$FG[214]'
+eval my_gray='$FG[007]'
+eval my_orange='$FG[003]'
 
 # right prompt
 if type "virtualenv_prompt_info" > /dev/null
@@ -27,7 +27,7 @@ else
 fi
 
 # git settings
-ZSH_THEME_GIT_PROMPT_PREFIX="$FG[075](branch:"
+ZSH_THEME_GIT_PROMPT_PREFIX="$FG[012](branch:"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_DIRTY="$my_orange*%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="$FG[075])%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="$FG[012])%{$reset_color%}"
