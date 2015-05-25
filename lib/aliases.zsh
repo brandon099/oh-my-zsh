@@ -31,18 +31,4 @@ alias l='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
 alias sl=ls # often screw this up
-
-alias vm='ssh -p 3022 devstack@localhost'
 alias afind='ack-grep -il'
-
-function zssh {
-    localsrv=(webstage webdev dmzdb11 dmzweb11 dmzweb12 dmzweb13)
-    build=(build)
-    if [[ ${localsrv[(r)$1]} == $1 ]] ; then
-        /usr/bin/ssh brandon.clifford@$1.apex.local
-    elif [[ ${build[(r)$1]} == $1 ]] ; then
-        /usr/bin/ssh bclifford@$1.vivint.com
-    else
-        /usr/bin/ssh brandon.clifford@$1.vivint.com
-    fi
-}
